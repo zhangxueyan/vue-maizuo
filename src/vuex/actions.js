@@ -21,17 +21,10 @@ export default {
   	})
   },
 
-  // film页面
-   //获取热映列表
-    //偷懒没有弄加载更多的效果，故去掉loading
-    getNowPlayList:function({commit}){
-    	if(state.getNowMore){
-            commit(types.FILE_NOWPLAYING_NUM);
-            api.getNowPlayList(state.nowPage,function(res){
-            	commit(types.FILM_GET_NOWPLAYING,res)
-            })
-        }
-        
-    },
-
+  // detail页面
+  getFilmDetail: ({ commit },id) => {
+    api.getFilmDetail(id,function(res){
+      commit(types.DETAIL_GET_INFO,res);
+    })
+  }
 };

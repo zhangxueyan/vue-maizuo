@@ -3,11 +3,6 @@ export default {
   banner:[],
   nowplay:[],
   coming:[],
-  // film页面  电影列表
-  nowPlayingList:[],
-  comingSoonList:[],
-  nowPage:0,
-  comingPage:0,
-  getNowMore:true,
-  getComingMore:true
+  //detail页面
+  detail:[]
 };

@@ -13,16 +13,8 @@ export default {
   [types.HOME_GET_COMINGSOON_LIST] (state, res) {
     state.coming = res.data.data.films
   },
-
-  //film页面
-  // 获取首页commingsoon
-  [types.FILM_GET_NOWPLAYING] (state, res) {
-  	state.nowPlayingList = state.nowPlayingList.concat(res.films)
-     //根据current跟total的关系判断是否还有下一页
-     state.getNowMore = res.page.current<res.page.total ? true : false
- },
- [types.FILE_NOWPLAYING_NUM](state){
- 	state.nowPage += 1
- 	state.getNowMore = false
- },
+  // detail页面
+  [types.DETAIL_GET_INFO] (state, res) {
+    state.detail = res.data.data.film
+  },
 };

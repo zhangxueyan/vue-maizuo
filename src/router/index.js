@@ -4,6 +4,9 @@ import Home from '@/pages/Home'
 import Detail from '@/pages/Detail'
 import Film from '@/pages/Film'
 import Cinema from '@/pages/Cinema'
+// film-list
+import Nowplaying  from '../components/Nowplaying'
+import Comingsoon  from '../components/Comingsoon'
 Vue.use(Router)
 
 export default new Router({
@@ -25,7 +28,17 @@ export default new Router({
     {
       path: '/film',
       name: 'film',
-      component: Film
+      component: Film,
+      children:[
+        {
+          path:'/film/nowplaying',
+          component:Nowplaying
+        },
+        {
+          path:'/film/comingsoon',
+          component:Comingsoon
+        }
+      ]
     },
     {
       path: '/cinema/:id',

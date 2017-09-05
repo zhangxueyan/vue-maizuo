@@ -27,6 +27,7 @@ export default {
   position: fixed;
   padding:0.3125rem;
   top:0;
+  z-index:10;
   .icon-menu{
     font-size:0.625rem;
     float:left;

@@ -18,7 +18,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   width: 10rem;
-  border:1px solid #ccc;
   margin:0 auto;
 }
 </style>

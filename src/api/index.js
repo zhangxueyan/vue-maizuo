@@ -34,4 +34,9 @@ export default {
      * 获取首页即将上映电影
      */
     getComingSoon:(cb)=>func_axios(url + 'film/coming-soon?__t=' + new Date()*1 +'&page=1&count=3',cb),
+
+    /**
+     * 根据id获取相关影片信息
+     */
+    getFilmDetail:(id,cb)=>func_axios(url + 'film/' + id + '?__t=' + new Date()*1,cb),
 }
