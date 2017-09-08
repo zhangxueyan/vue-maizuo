@@ -34,9 +34,17 @@ export default {
      * 获取首页即将上映电影
      */
     getComingSoon:(cb)=>func_axios(url + 'film/coming-soon?__t=' + new Date()*1 +'&page=1&count=3',cb),
-
+    /**
+     * 获取即将上映列表
+     */
+    getComingList:(page,cb)=>func_axios(url + 'film/coming-soon?page=' + page + '&count=10',cb),
     /**
      * 根据id获取相关影片信息
      */
     getFilmDetail:(id,cb)=>func_axios(url + 'film/' + id + '?__t=' + new Date()*1,cb),
+
+    /**
+     * 获取相关影院
+     */
+    getCinemaList:(id,cb)=>func_axios(url + 'film/' + id + '/cinema?__t=' + new Date()*1,cb),
 }

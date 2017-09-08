@@ -45,6 +45,7 @@ export default {
       position: fixed;
       right:0.15625rem;
       bottom:0.3125rem;
+      text-align:center;
       .icon-huojian{
         font-size:0.9375rem;
         line-height:1.25rem;

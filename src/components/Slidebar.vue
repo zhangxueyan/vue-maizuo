@@ -1,6 +1,6 @@
 <template>
   <div class="slidebar">
-
+    <h1>{{ msg }}</h1>
   </div>
 </template>
 
@@ -18,12 +18,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" type="text/css">
 .slidebar{
-  width:3.125rem;
-  height:7.8125rem;
-  border:1px solid red;
-  position: fixed;
-  left:0;
-  top:0;
-  z-index:1000;
+  // width:3.125rem;
+  // height:100%;
+  // border:1px solid #ccc;
+  // position: fixed;
+  // left:0;
+  // top:0;
 }
 </style>

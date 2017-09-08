@@ -1,15 +1,15 @@
 <template>
   <div class="film-now">
     <ul>
-    	<li v-for="item in nowplay" class="now-li clearfix">
-    	  <router-link :to="{name:'detail',params:{id:item.id}}">
+    	<li v-for="item in nowPlayingList" class="now-li clearfix">
+    	  <router-link :to="{name:'cinema',params:{id:item.id}}">
     	    <div class="now-pic">
-    	    	<img :src="item.cover.origin" alt="">
+    	    	<img :src="item.poster.thumbnail" alt="">
     	    </div>
     	    <div class="now-txt">
     	    	<p>{{item.name}}</p>
     	    	<p>{{item.intro}}</p>
-    	    	<p>{{item.cinemaCount}}家影院上映 {{item.watchCount}}购票</p>
+    	    	<p>{{item.cinemaCount}}家影院上映   {{item.watchCount}}购票</p>
     	    </div>
     	    <p class="now-grade">{{item.grade}}</p>
     	  </router-link>
@@ -31,12 +31,12 @@ export default {
   },
   computed:{
   	...mapState([
-  		'nowplay'
+      'nowPlayingList'
   		])
   },
   methods:{
   	fetchData(){
-  		this.$store.dispatch('getNowPlaying')
+      this.$store.dispatch('getNowPlayList')
   	}
   }
 }
@@ -46,6 +46,7 @@ export default {
 <style scoped lang="scss" type="text/css">
 .now-li{
 	padding:0.3125rem 0;
+  border-bottom:1px dashed  #8e8e8e;
 	a{
 		display:block;
 	}
@@ -70,6 +71,8 @@ export default {
 	}
 }
 .now-grade{
-	float:right
+	float:right;
+  color: #fe6e00;
+  font-size:0.5rem;
 }
 </style>

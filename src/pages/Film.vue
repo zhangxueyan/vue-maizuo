@@ -34,6 +34,7 @@ export default {
 <style scoped lang="scss" type="text/css">
   .film-wrap{
     padding:1.25rem 0.3125rem 0;
+        background: #fff;
     .film-tabs{
       border-bottom: 1px solid #fe6e00; 
       a{

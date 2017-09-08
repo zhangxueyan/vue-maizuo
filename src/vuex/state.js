@@ -4,5 +4,15 @@ export default {
   nowplay:[],
   coming:[],
   //detail页面
-  detail:[]
+  detail:[],
+  //film页面
+  nowPlayingList:[],
+  comingSoonList:[],
+  nowPage:0,
+  comingPage:0,
+  getNowMore:true,
+  getComingMore:true,
+  //cinema页面
+  cinemaList:[],
+  district:[]
 };

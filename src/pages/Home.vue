@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <appNav></appNav>
+    <slideBar></slideBar>
     <div class="home-wrap">
       <!-- 正在热映 -->
       <div class="nowplay">
@@ -45,6 +46,7 @@
   import appNav  from '../components/Navbar'
   import backTop  from '../components/Backtop'
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
+  import slideBar from '../components/Slidebar'
   export default {
     name: 'home',
     data () {
@@ -77,6 +79,7 @@
   },
   components:{
    appNav,
+   slideBar,
    backTop,
    swiper,
    swiperSlide
@@ -88,7 +91,7 @@
 <style scoped lang="scss" type="text/css">
   .home{
     .home-wrap{
-      padding-top: 1.25rem;
+      padding-top: 0.25rem;
     }
     .nowplay{
       padding:0.3125rem;
