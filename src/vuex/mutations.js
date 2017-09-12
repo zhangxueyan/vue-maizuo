@@ -38,7 +38,7 @@ export default {
     state.getComingMore = false
   },
     //cinema页面
-    [types.CINEMA_GET_LIST](state,res){
+  [types.CINEMA_GET_LIST](state,res){
         /**
          * 接口没有的区域影院没有进行区分就返回，故只能前端进行分类
          * 先将列表遍历一遍，将地区相关归入一个数组
@@ -58,5 +58,12 @@ export default {
         });
         state.district = district;
         state.cinemaList = res.cinemas;
-      },
+  },
+  // 切换显示侧边栏
+  [types.TOGGLE_SHOW_SLIDE](state){
+    state.isShowslide = !state.isShowslide
+  },
+  [types.HIDE_SLIDE](state){
+    state.isShowslide = false
+  }
 };

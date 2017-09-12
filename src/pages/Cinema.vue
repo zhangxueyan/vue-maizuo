@@ -1,6 +1,7 @@
 <template>
   <div class="cinema">
   <appNav></appNav>
+      <slideBar></slideBar>
    <div class="item" v-for="item in district">
     <div class="cinema-title" @click="changeArea(item.pinyin)">{{item.name}}</div>
     <div class="cinema-list" v-if='pinyin == item.pinyin'>
@@ -22,6 +23,7 @@
 import axios from 'axios'
 import {mapState,mapGetters,mapActions} from 'vuex'
 import appNav  from '../components/Navbar'
+import slideBar from '../components/Slidebar'
 export default {
   name: 'cinema',
   data () {
@@ -31,7 +33,8 @@ export default {
     }
   },
   components:{
-    appNav
+    appNav,
+    slideBar
   },
   created(){
       if(this.cinemaList.length == 0){

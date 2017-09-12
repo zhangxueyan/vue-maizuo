@@ -12,3 +12,6 @@ export const FILM_GET_NOWPLAYING = 'FILM_GET_NOWPLAYING'; //获取热映电影
 export const FILE_NOWPLAYING_NUM = 'FILE_NOWPLAYING_NUM'; //热映页数
 export const FILM_GET_COMINGSOON = 'FILM_GET_COMINGSOON'; //获取即将上映电影
 export const FILM_COMINGSOON_NUM = 'FILM_COMINGSOON_NUM'; // 即将上映页数
+// common
+export const TOGGLE_SHOW_SLIDE = 'TOGGLE_SHOW_SLIDE';  //切换显示侧边栏
+export const HIDE_SLIDE = 'HIDE_SLIDE';  //隐藏侧边栏

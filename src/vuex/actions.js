@@ -54,4 +54,12 @@ export default {
             // commit(types.COM_LOADING_STATUS,false);
         })
     },
+ // 切换显示侧边栏
+  toggleShowslide: ({ commit }) => {
+     commit(types.TOGGLE_SHOW_SLIDE);
+  },
+  //隐藏侧边栏
+  hideSlide: ({ commit }) => {
+     commit(types.HIDE_SLIDE);
+  }
 };

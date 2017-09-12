@@ -1,6 +1,7 @@
 <template>
   <div class="film">
     <appNav></appNav>
+    <slideBar></slideBar>
     <div class="film-wrap">
       <div class="clearfix film-tabs">
        <router-link to="/film/nowplaying">正在热映</router-link>
@@ -16,6 +17,7 @@ import axios from 'axios'
 import {mapState,mapGetters,mapActions} from 'vuex'
 import appNav  from '../components/Navbar'
 import backTop  from '../components/Backtop'
+import slideBar from '../components/Slidebar'
 export default {
   name: 'film',
   data () {
@@ -25,6 +27,7 @@ export default {
   },
   components:{
    appNav,
+   slideBar,
    backTop
  }
 }

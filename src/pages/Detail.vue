@@ -1,18 +1,19 @@
 <template>
-  <div class="detail">
+  <div class="detail" v-if="detail">
    <appNav></appNav>
+       <slideBar></slideBar>
    <div class="detail-wrap">
      <div class="detail-pic">
-      <img :src="detail.cover.origin" alt="">
+      <img :src="detail.cover && detail.cover.origin" alt="">
     </div>
     <div class="detail-info">
       <p class="detail-p1">影片简介</p>
       <p>导演：{{detail.director}}</p>
       <p class="detail-p2">主演：<span v-for="item in detail.actors">{{item.name}}</span></p>
       <p>地区语言：{{detail.nation}}({{detail.language}}</p>
-      <p>上映日期：{{detail.premiereAt}}</p>
+      <p>上映日期：{{detail.premiereAt|formatDate}}</p>
       <p class="detail-p2">{{detail.synopsis}}</p>
-       <a href="#/film" class="s-more">立即购票</a>
+      <a href="#/film" class="s-more">立即购票</a>
     </div>
   </div>
   </div>
@@ -22,6 +23,7 @@
 import axios from 'axios'
 import {mapState,mapGetters,mapActions} from 'vuex'
 import appNav  from '../components/Navbar'
+import slideBar from '../components/Slidebar'
 export default {
   name: 'detail',
   data () {
@@ -32,18 +34,22 @@ export default {
   created(){
    this.fetchData()
  },
- computed:{
-  ...mapState([
-    'detail'
-    ])
-},
+ computed:mapGetters({
+   detail:'getFilmDetail'
+ }),
+  // computed:{
+  //   ...mapGetters([
+  //     'mapGetters'
+  //     ])
+  // },
   methods:{
     fetchData(){
       this.$store.dispatch('getFilmDetail',this.$route.params.id)
     }
   },
   components:{
-   appNav
+   appNav,
+   slideBar
  }
 }
 </script>

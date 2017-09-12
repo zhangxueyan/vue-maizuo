@@ -14,5 +14,6 @@ export default {
   getComingMore:true,
   //cinema页面
   cinemaList:[],
-  district:[]
+  district:[],
+  isShowslide:false
 };

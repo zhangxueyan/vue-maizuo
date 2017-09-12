@@ -2,6 +2,18 @@
   <div class="home">
     <appNav></appNav>
     <slideBar></slideBar>
+    <div class="banner">
+     <swiper :options="swiperOption" ref="mySwiper">
+        <!-- slides -->
+        <swiper-slide v-for="item in banner" :key="item.id">
+          <router-link :to="{name:'home'}">
+            <img :src="item.imageUrl" alt="">
+          </router-link>
+        </swiper-slide>
+        <!-- Optional controls -->
+        <div class="swiper-pagination"  slot="pagination"></div>
+      </swiper>
+    </div>
     <div class="home-wrap">
       <!-- 正在热映 -->
       <div class="nowplay">
@@ -17,7 +29,7 @@
             </router-link>
           </li>
         </ul>
-        <a href="#/film" class="s-more">更多热映电影</a>
+        <a href="#/film/nowplaying" class="s-more">更多热映电影</a>
       </div>
       <!-- 即将上映 -->
       <div class="nowplay coming">
@@ -33,13 +45,12 @@
             </router-link>
           </li>
         </ul>
-        <a href="#/film" class="s-more">更多即将上映电影</a>
+        <a href="#/film/comingsoon" class="s-more">更多即将上映电影</a>
       </div>
     </div>
     <backTop></backTop>
 </div>
 </template>
-
 <script>
   import axios from 'axios'
   import {mapState,mapGetters,mapActions} from 'vuex'
@@ -52,11 +63,15 @@
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
+        notNextTick: true,
         swiperOption: {
-          pagination: '.swiper-pagination',
-          slidesPerView: 1,
-          paginationClickable: true,
-          autoplay:5000
+          autoplay: 3000,
+          grabCursor : true,
+          setWrapperSize :true,
+          autoHeight: true,
+          pagination : '.swiper-pagination',
+          paginationClickable :true,
+          observeParents:true
         }
       }
     },
@@ -89,9 +104,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" type="text/css">
-  .home{
-    .home-wrap{
-      padding-top: 0.25rem;
+
+    .home{
+      padding-top:1.25rem;
     }
     .nowplay{
       padding:0.3125rem;
@@ -122,7 +137,6 @@
           }
         }
       }
-    }
     .s-more{
       display:block;
       width:3.75rem;
@@ -152,6 +166,14 @@
         transform:translateX(-50%);
         top:-0.3125rem;
       }
+    }
+  }
+  .banner{
+    // height:5.625rem;
+    // overflow:hidden;
+    img{
+      display:block;
+      width:100%;
     }
   }
 
